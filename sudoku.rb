@@ -55,11 +55,13 @@ class SudokuGame
   end
 
   def pos_to_val(pos, val)
+    board.render
     board[pos] = val
   end
 
   def run
     process_parameters until board.solved?
+    board.render
     puts "Congratulations, you win!"
   end
 
