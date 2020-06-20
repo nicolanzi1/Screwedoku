@@ -60,13 +60,13 @@ class SudokuGame
   end
 
   def run
-    process_parameters until board.solved?
+    process_parameters until solved?
     board.render
     puts "Congratulations, you win!"
   end
 
   def solved?
-    board.terminate?
+    board.solved?
   end
 
   def valid_pos?(pos)
@@ -86,4 +86,4 @@ end
 
 
 game = SudokuGame.from_file("puzzles/sudoku1.txt")
-game.commence_proceedings
+game.run
